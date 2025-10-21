@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-@font-face {
+@font-fiace {
   font-family: "Helvetica Neue";
   src: url(../media/font/HelveticaNeue-Light.otf);
   font-weight: 300;
@@ -64,7 +64,7 @@ body {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -97,10 +97,11 @@ body {
 }
 
 .hero-balloon {
-  width: 809rem;
-  height: 812rem;
+  width: 970rem;
+  height: 972rem;
   position: absolute;
   animation: balloon 4s ease infinite;
+  top: 60rem;
 }
 .hero-balloon.no-animation {
   animation-play-state: paused;
@@ -139,7 +140,7 @@ body {
 }
 .hero .hero-text {
   font-weight: 400;
-  font-size: 26px;
+  font-size: 26rem;
   text-align: right;
   color: white;
   margin-top: 50rem;
@@ -313,6 +314,7 @@ body {
   background: radial-gradient(67.59% 67.59% at 50.12% 50.13%, #111 0%, #2b2b2b 100%);
   transition: all 0.4s ease;
   height: 415rem;
+  position: relative;
 }
 .tarifs .item:nth-child(3), .tarifs .item:nth-child(4) {
   grid-column: span 2;
@@ -442,7 +444,7 @@ body {
   gap: 22rem;
 }
 .plusses.orange .heading {
-  font-size: 120rem;
+  font-size: 160rem;
   font-weight: 400;
   background: linear-gradient(37deg, #a75b1b 0%, #ce8242 50%, #fdb171 100%);
   -webkit-background-clip: text;
@@ -595,15 +597,15 @@ body {
 }
 .contacts .item {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 150rem;
+  height: 150rem;
   border-radius: 50%;
   display: flex;
   background: radial-gradient(67.59% 67.59% at 50.12% 50.13%, rgba(17, 17, 17, 0.4392156863) 0%, rgba(43, 43, 43, 0.4196078431) 100%);
   align-items: center;
   justify-content: center;
   color: #8b91ff;
-  font-size: 24px;
+  font-size: 24rem;
   font-weight: 500;
 }
 .contacts .item::before {
@@ -611,7 +613,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  padding: 1px;
+  padding: 1rem;
   /* толщина границы */
   background: linear-gradient(219deg, #7327f0 0%, #8b91ff 50.47%, #2685ff 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -643,17 +645,17 @@ body {
 }
 .contacts .item:nth-child(2) {
   position: relative;
-  left: -35px;
+  left: -35rem;
   z-index: 2;
 }
 .contacts .item:nth-child(3) {
   position: relative;
-  left: -70px;
+  left: -70rem;
   z-index: 1;
 }
 .contacts .item span {
   font-weight: 400;
-  font-size: 22px;
+  font-size: 22rem;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   background: linear-gradient(219deg, #7327f0 0%, #8b91ff 50.47%, #2685ff 100%);
@@ -663,7 +665,7 @@ body {
 }
 .contacts .heading {
   font-weight: 500;
-  font-size: 100px;
+  font-size: 100rem;
   text-transform: uppercase;
   color: white;
 }
@@ -679,7 +681,7 @@ body {
 .footer p,
 .footer a {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 20rem;
   color: white;
 }
 
@@ -687,9 +689,9 @@ body {
   position: fixed;
   top: 130rem;
   left: 308rem;
-  border: 0.5px solid white;
-  border-radius: 0 50px 50px 50px;
-  backdrop-filter: blur(5px);
+  border: 0.5rem solid white;
+  border-radius: 0 50rem 50rem 50rem;
+  backdrop-filter: blur(5rem);
   background: rgba(0, 0, 0, 0.57);
   width: 600rem;
   padding: 20rem 20rem 45rem;
@@ -726,7 +728,7 @@ body {
   display: flex;
   justify-content: space-between;
   position: relative;
-  padding: 15px 0px;
+  padding: 15rem 0rem;
 }
 .payment-modal .item::after {
   content: "";
@@ -743,17 +745,17 @@ body {
 }
 .payment-modal .heading {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 20rem;
   color: white;
 }
 .payment-modal .pay {
-  border: 0.2px solid rgba(255, 255, 255, 0.7);
-  border-radius: 100px;
-  padding: 5px 15px;
-  backdrop-filter: blur(4px);
+  border: 0.2rem solid rgba(255, 255, 255, 0.7);
+  border-radius: 100rem;
+  padding: 5rem 15rem;
+  backdrop-filter: blur(4rem);
   background: rgba(0, 0, 0, 0);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 20rem;
   color: white;
 }
 
@@ -772,6 +774,84 @@ body {
 .closePopups.active {
   opacity: 1;
   visibility: visible;
+}
+
+.mob {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mob {
+    display: initial;
+  }
+  body,
+  html {
+    font-size: 0.3125vw;
+  }
+  .container {
+    max-width: 280rem;
+  }
+  .header .container {
+    align-items: center;
+    padding-top: 20rem;
+  }
+  .header-nav {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .header-logo {
+    width: 37rem;
+  }
+  .connect-button {
+    font-weight: 400;
+    font-size: 12rem;
+  }
+  .connect-button svg {
+    width: 16rem;
+  }
+  .nav-item {
+    font-weight: 300;
+    font-size: 12rem;
+  }
+  .hero-balloon {
+    display: none;
+  }
+  .hero {
+    padding: 75rem 0 30rem;
+  }
+  .hero .wrapper {
+    flex-direction: column;
+  }
+  .hero .item {
+    max-width: 100%;
+    height: 60rem;
+    border-radius: 30rem;
+    padding: 20rem;
+  }
+  .hero .item .heading {
+    font-weight: 400;
+    font-size: 14rem;
+  }
+  .hero .item .text {
+    font-weight: 300;
+    font-size: 12rem;
+  }
+  .hero .item svg {
+    width: 20rem;
+    height: 20rem;
+    top: 20rem;
+    left: 20rem;
+  }
+  .hero .item.active {
+    height: 275rem;
+  }
+  .hero .item.active .heading {
+    margin-bottom: 10rem;
+  }
+  .hero .item.active .texts {
+    padding: 20rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
