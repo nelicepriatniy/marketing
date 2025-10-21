@@ -46,6 +46,12 @@ selectColor.forEach((el) => {
     document.querySelector('.plusses').classList.add(currentColor)
     console.log(currentColor)
   }
+  el.addEventListener('mouseover', () => {
+    if (!el.classList.contains('active')) document.querySelector('.hero .hero-balloon').classList.add('no-animation')
+  })
+  el.addEventListener('mouseleave', () => {
+    document.querySelector('.hero .hero-balloon').classList.remove('no-animation')
+  })
 })
 
 

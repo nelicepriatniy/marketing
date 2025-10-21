@@ -102,6 +102,9 @@ body {
   position: absolute;
   animation: balloon 4s ease infinite;
 }
+.hero-balloon.no-animation {
+  animation-play-state: paused;
+}
 .hero-balloon img {
   opacity: 0;
   transition: all 0.4s ease;
@@ -133,6 +136,23 @@ body {
 .hero .container {
   display: flex;
   justify-content: flex-end;
+}
+.hero .hero-text {
+  font-weight: 400;
+  font-size: 26px;
+  text-align: right;
+  color: white;
+  margin-top: 50rem;
+  max-width: 415rem;
+}
+.hero .hero-w {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 850rem;
+  align-items: flex-end;
+  margin-top: 44rem;
 }
 .hero .wrapper {
   position: relative;
@@ -190,6 +210,12 @@ body {
   max-height: 100rem;
   max-width: 315rem;
 }
+.hero .item.active::after {
+  opacity: 0.2;
+}
+.hero .item:hover::after {
+  opacity: 0.2;
+}
 .hero .item::after {
   content: "";
   display: block;
@@ -200,6 +226,7 @@ body {
   background: black;
   opacity: 0.4;
   position: absolute;
+  transition: all 0.4s ease;
 }
 .hero .item .texts {
   width: fit-content;
