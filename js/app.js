@@ -138,3 +138,29 @@ swiperTabs.forEach((tab) => {
   }
 })
 
+const paymentModal = document.querySelector('.payment-modal')
+const paymentOpen = document.querySelectorAll('.payment-open')
+const popups = document.querySelectorAll('.popup')
+const closePopups = document.querySelector('.closePopups')
+const paymentClose = document.querySelectorAll('.payment-close')
+
+paymentOpen.forEach((el) => {
+  el.onclick = () => {
+    paymentModal.classList.add('active')
+    closePopups.classList.add('active')
+  }
+})
+paymentClose.forEach((el) => {
+  el.onclick = () => {
+    paymentModal.classList.remove('active')
+    closePopups.classList.remove('active')
+  }
+})
+
+
+closePopups.onclick = () => {
+  closePopups.classList.remove('active')
+  popups.forEach((el) => {
+    el.classList.remove('active')
+  })
+}

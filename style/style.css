@@ -1,17 +1,4 @@
 @charset "UTF-8";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  color: white;
-  background: none;
-  font-size: 16rem;
-}
-
 @font-face {
   font-family: "Helvetica Neue";
   src: url(../media/font/HelveticaNeue-Light.otf);
@@ -27,6 +14,20 @@
   src: url(../media/font/HelveticaNeue-Medium.otf);
   font-weight: 500;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: white;
+  background: none;
+  font-size: 16rem;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -47,7 +48,6 @@ body {
   display: flex;
   align-items: center;
   gap: 5rem;
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 22rem;
   letter-spacing: -0.02em;
@@ -76,10 +76,10 @@ body {
 }
 
 .nav-item {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 20rem;
   color: white;
+  cursor: pointer;
 }
 
 .header-logo {
@@ -159,8 +159,19 @@ body {
 .hero .item * {
   transition: all 0.4s ease;
 }
+.hero .item svg {
+  position: absolute;
+  top: 50rem;
+  left: 50rem;
+  z-index: 2;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
 .hero .item.active {
   max-width: 415rem;
+}
+.hero .item.active svg {
+  opacity: 1;
 }
 .hero .item.active .texts {
   top: auto;
@@ -203,13 +214,11 @@ body {
   max-height: 0;
   opacity: 0;
   transition: all 0.4s ease;
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 300;
   font-size: 20rem;
   color: white;
 }
 .hero .item .heading {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 30rem;
   text-transform: uppercase;
@@ -253,7 +262,6 @@ body {
   background: linear-gradient(219deg, rgba(15, 16, 17, 0.8) 0%, rgba(206, 130, 66, 0.8) 100%);
 }
 .tarifs .heading {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 160rem;
   line-height: 120%;
@@ -303,7 +311,6 @@ body {
   gap: 10rem;
 }
 .tarifs .item .item-heading .heading-text {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 500;
   font-size: 40rem;
   text-transform: uppercase;
@@ -319,7 +326,6 @@ body {
   opacity: 1;
 }
 .tarifs .item .text-list {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 300;
   font-size: 20rem;
   color: white;
@@ -327,7 +333,6 @@ body {
   line-height: 130%;
 }
 .tarifs .item .price {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 500;
   font-size: 22rem;
   text-transform: uppercase;
@@ -442,7 +447,6 @@ body {
   color: transparent;
 }
 .plusses .text {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 300;
   font-size: 20rem;
   color: white;
@@ -459,7 +463,6 @@ body {
   margin-bottom: 50rem;
 }
 .portfolio .heading {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 160rem;
   line-height: 120%;
@@ -511,7 +514,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 22rem;
   letter-spacing: -0.02em;
@@ -541,7 +543,6 @@ body {
 .portfolio .tabs-wrapper .item span {
   position: relative;
   z-index: 2;
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 22rem;
   letter-spacing: -0.02em;
@@ -623,7 +624,6 @@ body {
   z-index: 1;
 }
 .contacts .item span {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 22px;
   letter-spacing: -0.02em;
@@ -634,7 +634,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 .contacts .heading {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 500;
   font-size: 100px;
   text-transform: uppercase;
@@ -651,10 +650,100 @@ body {
 }
 .footer p,
 .footer a {
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: white;
+}
+
+.payment-modal {
+  position: fixed;
+  top: 130rem;
+  left: 308rem;
+  border: 0.5px solid white;
+  border-radius: 0 50px 50px 50px;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.57);
+  width: 600rem;
+  padding: 20rem 20rem 45rem;
+  z-index: 11;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+.payment-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.payment-modal .close {
+  position: absolute;
+  top: 30rem;
+  right: 30rem;
+  cursor: pointer;
+}
+.payment-modal .top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rem;
+}
+.payment-modal .logo {
+  width: 37rem;
+}
+.payment-modal .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.payment-modal .item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 15px 0px;
+}
+.payment-modal .item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 49.52%, rgba(255, 255, 255, 0) 100%);
+}
+.payment-modal .item:last-child::after {
+  display: none;
+}
+.payment-modal .heading {
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+}
+.payment-modal .pay {
+  border: 0.2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 100px;
+  padding: 5px 15px;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0);
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+}
+
+.closePopups {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(17, 17, 17, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 10;
+}
+.closePopups.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*# sourceMappingURL=style.css.map */

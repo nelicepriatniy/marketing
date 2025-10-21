@@ -11,12 +11,36 @@
 </head>
 
 <body>
+  <div class="payment-modal popup">
+    <button class="close payment-close">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_5257_2555)">
+          <path d="M0.949747 0.949728L10.8492 10.8492M0.949747 10.8492L10.8492 0.949728" stroke="white"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+        <defs>
+      </svg>
+    </button>
+    <div class="top">
+      <img src="./media/icons/logo.svg" alt="" class="logo">
+    </div>
+    <div class="wrapper">
+      <div class="item">
+        <p class="heading">Номер заказа: 1</p>
+        <button class="pay">Оплатить</button>
+      </div>
+      <div class="item">
+        <p class="heading">Номер заказа: 2</p>
+        <button class="pay">Оплатить</button>
+      </div>
+    </div>
+  </div>
 
   <header class="header">
     <div class="container">
       <nav class="header-nav">
         <button class="nav-item">Партнерство</button>
-        <button class="nav-item">Оплата</button>
+        <button class="nav-item payment-open">Оплата</button>
       </nav>
       <a href="#" class="header-logo">
         <img src="./media/icons/logo.svg" alt="">
@@ -40,6 +64,10 @@
       <div class="container">
         <div class="wrapper">
           <div class="item active" data-color="perpl">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5833 35.4166L35.4167 14.5833M14.5833 35.4166L14.5833 16.6666M14.5833 35.4166H33.3333"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             <img src="./media/hero/perpl.png" alt="" class="bg">
             <div class="texts">
               <p class="heading">Маркетинг</p>
@@ -47,6 +75,10 @@
             </div>
           </div>
           <div class="item" data-color="orange">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5833 35.4166L35.4167 14.5833M14.5833 35.4166L14.5833 16.6666M14.5833 35.4166H33.3333"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             <img src="./media/hero/orange.png" alt="" class="bg">
             <div class="texts">
               <p class="heading">SMM</p>
@@ -54,6 +86,10 @@
             </div>
           </div>
           <div class="item" data-color="green">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5833 35.4166L35.4167 14.5833M14.5833 35.4166L14.5833 16.6666M14.5833 35.4166H33.3333"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             <img src="./media/hero/green.png" alt="" class="bg">
             <div class="texts">
               <p class="heading">Медиа</p>
@@ -690,6 +726,7 @@
       <a href="/">Политика конфиденциальности</a>
     </div>
   </footer>
+  <div class="closePopups"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script defer src="js/app.js"></script>
