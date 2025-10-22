@@ -195,6 +195,25 @@ formClose.forEach((el) => {
 })
 
 
+
+const partModal = document.querySelector('.partner-modal')
+const partOpen = document.querySelectorAll('.part-open')
+const partClose = document.querySelectorAll('.part-close')
+
+partOpen.forEach((el) => {
+  el.onclick = () => {
+    partModal.classList.add('active')
+    closePopups.classList.add('active')
+  }
+})
+partClose.forEach((el) => {
+  el.onclick = () => {
+    partModal.classList.remove('active')
+    closePopups.classList.remove('active')
+  }
+})
+
+
 if (window.innerWidth < 1280) {
   const tarifsSlider = new Swiper('.tarifs-p-slider', {
     speed: 400,

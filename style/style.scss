@@ -1153,6 +1153,28 @@ body {
 
 }
 
+.partner-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  max-width: 624rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .4s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .bg {
+    width: 100%;
+  }
+
+}
+
 @media (max-width: $md) {
   .mob {
     display: initial;
@@ -1566,5 +1588,10 @@ body {
       font-size: 14rem;
     }
 
+  }
+
+  .partner-modal {
+    max-width: 300rem;
+    width: 100%;
   }
 }

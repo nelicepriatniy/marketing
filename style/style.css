@@ -948,6 +948,25 @@ body {
   border-radius: 30rem;
 }
 
+.partner-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  max-width: 624rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+.partner-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.partner-modal .bg {
+  width: 100%;
+}
+
 @media (max-width: 1024px) {
   .mob {
     display: initial;
@@ -1266,6 +1285,10 @@ body {
   }
   .form-modal .submit {
     font-size: 14rem;
+  }
+  .partner-modal {
+    max-width: 300rem;
+    width: 100%;
   }
 }
 
