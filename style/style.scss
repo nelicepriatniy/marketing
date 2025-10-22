@@ -316,10 +316,7 @@ body {
   position: relative;
 
   .wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20rem;
-    transition: all .4s ease;
+
     opacity: 0;
     visibility: hidden;
     max-height: 0;
@@ -331,6 +328,13 @@ body {
       position: relative;
       max-height: 1080rem;
     }
+  }
+
+  .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20rem;
+    transition: all .4s ease;
 
     &.green {
       .item {
@@ -1125,6 +1129,8 @@ body {
     padding-top: 25rem;
     padding-bottom: 15rem;
 
+    .container {}
+
     .heading {
       font-size: 30rem;
       transform: translateY(12rem);
@@ -1137,10 +1143,15 @@ body {
       justify-content: flex-end;
     }
 
-    .wrapper {
+    .wrapper,
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-wrapper {
       display: flex;
-      gap: 20rem;
-      overflow-x: scroll;
+      gap: 0;
+      overflow: visible;
     }
 
     .item {

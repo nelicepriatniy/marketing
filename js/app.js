@@ -170,3 +170,18 @@ closePopups.onclick = () => {
     el.classList.remove('active')
   })
 }
+
+if (window.innerWidth < 1280) {
+  const tarifsSlider = new Swiper('.tarifs-p-slider', {
+    speed: 400,
+    spaceBetween: 20,
+  })
+  const tarifsSlidero = new Swiper('.tarifs-o-slider', {
+    speed: 400,
+    spaceBetween: 20,
+  })
+  const tarifsSliderg = new Swiper('.tarifs-g-slider', {
+    speed: 400,
+    spaceBetween: 20,
+  })
+}
