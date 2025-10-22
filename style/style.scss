@@ -1282,6 +1282,42 @@ body {
     padding-top: 25rem;
     padding-bottom: 15rem;
 
+    .swiper-slide-active {
+      padding: 20rem;
+
+      &.last {
+        padding: 50rem;
+
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      &::after {
+        opacity: 1;
+      }
+
+      .icon {
+        max-height: 0;
+      }
+
+      .texts {
+        margin-top: 0;
+        max-height: 500rem;
+      }
+
+      .price {
+        margin-top: 20rem;
+      }
+
+      .item-heading {
+        svg {
+          opacity: 0;
+        }
+      }
+
+    }
+
     .container {}
 
     .heading {

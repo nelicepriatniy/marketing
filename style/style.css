@@ -1050,6 +1050,31 @@ body {
     padding-top: 25rem;
     padding-bottom: 15rem;
   }
+  .tarifs .swiper-slide-active {
+    padding: 20rem;
+  }
+  .tarifs .swiper-slide-active.last {
+    padding: 50rem;
+  }
+  .tarifs .swiper-slide-active.last::after {
+    opacity: 0;
+  }
+  .tarifs .swiper-slide-active::after {
+    opacity: 1;
+  }
+  .tarifs .swiper-slide-active .icon {
+    max-height: 0;
+  }
+  .tarifs .swiper-slide-active .texts {
+    margin-top: 0;
+    max-height: 500rem;
+  }
+  .tarifs .swiper-slide-active .price {
+    margin-top: 20rem;
+  }
+  .tarifs .swiper-slide-active .item-heading svg {
+    opacity: 0;
+  }
   .tarifs .heading {
     font-size: 30rem;
     transform: translateY(12rem);
