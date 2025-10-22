@@ -163,25 +163,58 @@ paymentClose.forEach((el) => {
   }
 })
 
-
 closePopups.onclick = () => {
   closePopups.classList.remove('active')
   popups.forEach((el) => {
     el.classList.remove('active')
+    formModal.classList.remove('head')
   })
 }
+
+
+
+const formModal = document.querySelector('.form-modal')
+const formOpen = document.querySelectorAll('.form-open')
+const formClose = document.querySelectorAll('.form-close')
+
+formOpen.forEach((el) => {
+  el.onclick = () => {
+    if (el.classList.contains('head-btn')) {
+      formModal.classList.add('head')
+    }
+    formModal.classList.add('active')
+    closePopups.classList.add('active')
+  }
+})
+formClose.forEach((el) => {
+  el.onclick = () => {
+    formModal.classList.remove('head')
+    formModal.classList.remove('active')
+    closePopups.classList.remove('active')
+  }
+})
+
 
 if (window.innerWidth < 1280) {
   const tarifsSlider = new Swiper('.tarifs-p-slider', {
     speed: 400,
     spaceBetween: 20,
+    navigation: {
+      nextEl: '.tarifs .mob.arr'
+    }
   })
   const tarifsSlidero = new Swiper('.tarifs-o-slider', {
     speed: 400,
     spaceBetween: 20,
+    navigation: {
+      nextEl: '.tarifs .mob.arr'
+    }
   })
   const tarifsSliderg = new Swiper('.tarifs-g-slider', {
     speed: 400,
     spaceBetween: 20,
+    navigation: {
+      nextEl: '.tarifs .mob.arr'
+    }
   })
 }

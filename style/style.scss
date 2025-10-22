@@ -52,6 +52,7 @@ body {
 }
 
 .connect-button {
+  cursor: pointer;
   border-bottom: 0.50rem solid white;
   padding: 5rem 0rem;
   display: flex;
@@ -341,6 +342,12 @@ body {
         &::after {
           background: linear-gradient(219deg, rgba(15, 16, 17, 0.8) 0%, rgba(70, 200, 114, 0.8) 100%);
         }
+
+        .price {
+          &::after {
+            background: #149640;
+          }
+        }
       }
     }
 
@@ -348,6 +355,12 @@ body {
       .item {
         &::after {
           background: linear-gradient(219deg, rgba(15, 16, 17, 0.8) 0%, rgba(206, 130, 66, 0.8) 100%);
+        }
+
+        .price {
+          &::after {
+            background: #ea9e37;
+          }
         }
       }
     }
@@ -454,6 +467,34 @@ body {
       text-align: center;
       line-height: 100%;
       transition: all .4s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      &::after {
+        content: 'Оплатить';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        -webkit-text-fill-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #3987ff;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .4s ease;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
 
     &::after {
@@ -1022,6 +1063,96 @@ body {
   }
 }
 
+.form-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 11;
+  backdrop-filter: blur(5rem);
+  background: rgba(0, 0, 0, 0.6);
+  border: 0.50rem solid white;
+  padding: 20rem 50rem 50rem;
+  border-radius: 50rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .4s ease;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+  &.head {
+    border-radius: 50px 0 50px 50px;
+    top: 124rem;
+    right: 100rem;
+    transform: translate(0, 0);
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+  .close {
+    position: absolute;
+    top: 30rem;
+    right: 30rem;
+  }
+
+  .logo {
+    width: 37rem;
+    margin-bottom: 50rem;
+  }
+
+  .heading {
+    font-weight: 400;
+    font-size: 20rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 40rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 500rem;
+    gap: 15rem;
+    align-items: center;
+  }
+
+  .submit {
+    margin-top: 15rem;
+    font-weight: 400;
+    font-size: 20rem;
+    color: #111;
+    border: 0.20rem solid rgba(255, 255, 255, 0.7);
+    border-radius: 100rem;
+    padding: 5rem 15rem;
+    backdrop-filter: blur(4rem);
+    background: white;
+    width: fit-content;
+  }
+
+  input,
+  textarea {
+    border: 0.50rem solid white;
+    border-radius: 50rem;
+    padding: 10rem 20rem;
+    width: 100%;
+    font-weight: 300;
+    font-size: 20rem;
+    color: rgba(255, 255, 255);
+  }
+
+  textarea {
+    height: 130rem;
+    padding: 20rem;
+    border-radius: 30rem;
+  }
+
+}
+
 @media (max-width: $md) {
   .mob {
     display: initial;
@@ -1393,5 +1524,47 @@ body {
       padding: 10rem 10rem;
       font-size: 14rem;
     }
+  }
+
+  .form-modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300rem;
+    padding: 20rem;
+
+    .logo {
+      margin-bottom: 20rem;
+    }
+
+    .heading {
+      font-size: 14rem;
+      margin-bottom: 20rem;
+    }
+
+    input,
+    textarea {
+      font-size: 14rem;
+      border-radius: 30rem;
+    }
+
+    textarea {
+      padding: 10rem;
+      border-radius: 10rem;
+    }
+
+
+    input {
+      width: 100%;
+    }
+
+    form {
+      width: 280rem;
+    }
+
+    .submit {
+      font-size: 14rem;
+    }
+
   }
 }
